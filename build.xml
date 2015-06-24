@@ -1,0 +1,30 @@
+
+<project name="caos-php-client" default="main">
+
+	<target name="main" depends="get-CAOS-classes" />
+
+	<target name="get-CAOS-classes" depends="composer-install">
+		<exec command="php classGenerator.php" passtrhu="true" checkreturn="true" />
+	</target>
+
+	<target name="composer-install" depends="get-composer">
+		<exec command="php composer.phar install" passthru="true" checkreturn="true" />
+	</target>
+
+	<!-- Downloads composer.phar -->
+	<target name="get-composer">
+		<if>
+			<not>
+				<available file="composer.phar" />
+			</not>
+			<then>
+				<echo msg="composer.phar not found. Downloading..." />
+				<httpget url="https://getcomposer.org/composer.phar" sslVerifyPeer="false"/>
+			</then>
+			<else>
+				<echo msg="composer.phar already exists" />
+			</else>
+		</if>
+	</target>
+
+</project>

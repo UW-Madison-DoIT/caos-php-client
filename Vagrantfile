@@ -8,4 +8,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   config.vm.provision "shell", inline: "apt-get update"
   
+  config.vm.provision "puppet"
+  
 end
