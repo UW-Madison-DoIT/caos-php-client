@@ -1,5 +1,20 @@
 {
-	"require": {
+	"name": "uwmadison_doit/caos-php-client",
+	"version": "0.1.0",
+	"homepage": "https://bitbucket.org/uwmadison_doit/caos-php-client",
+	"authors": [
+		{
+			"name": "UW-Madison DoIT ADI Internal Applications",
+			"email": "adi-ia@lists.wisc.edu",
+			"homepage": "http://www.doit.wisc.edu/"
+		}
+	],
+	"support": {
+		"email": "adi-ia@lists.wisc.edu",
+		"source": "https://bitbucket.org/uwmadison_doit/caos-php-client"
+	},
+
+	"require-dev": {
 		"wsdl2phpgenerator/wsdl2phpgenerator": "^3.0"
 	}
 }
