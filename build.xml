@@ -1,0 +1,7 @@
+<project>
+
+	<target name="main">
+		<exec command="echo main" />
+	</target>
+
+</project>

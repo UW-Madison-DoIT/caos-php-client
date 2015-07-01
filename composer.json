@@ -1,5 +1,6 @@
 {
 	"name": "uwmadison_doit/caos-php-client",
+	"description": "A PHP client used to connect with the CAOS API and perform requests",
 	"version": "0.1.0",
 	"homepage": "https://bitbucket.org/uwmadison_doit/caos-php-client",
 	"authors": [
@@ -14,7 +15,11 @@
 		"source": "https://bitbucket.org/uwmadison_doit/caos-php-client"
 	},
 
+	"require": {
+		"php": ">=5.3.0"
+	},
 	"require-dev": {
+		"phing/phing": "2.*",
 		"wsdl2phpgenerator/wsdl2phpgenerator": "^3.0"
 	}
 }
