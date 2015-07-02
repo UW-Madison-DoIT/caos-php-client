@@ -37,9 +37,6 @@
 		<property name="branch" value="master" override="true" />
 		<exec command="php prepare.php ${targetDir} ${version} ${branch}" passthru="true" checkreturn="true" />
 	</target>
-	
-	<target name="release" depends="release-clone" >
-		<exec command="php release.php" passthru="true" checkreturn="true" />
-	</target>
+
 
 </project>
