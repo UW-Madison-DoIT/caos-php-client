@@ -6,6 +6,7 @@
 	
 	<!-- deletes the target directory if it exists -->
 	<target name="clean">
+		<!-- Some files will be set to read only and on Windows cannot be deleted. The file attributes must be modified before deleting -->
 		<if>
 			<os family="windows" />
 			<then>
@@ -15,7 +16,7 @@
 		<delete dir="${targetDir}" failonerror="false" />
 	</target>
 	
-	<target name="main"/>
+	<target name="main" />
 	
 	<target name="composer-update" depends="composer-selfupdate">
 		<exec command="php composer.phar update" passthru="true" checkreturn="true"/>
@@ -32,7 +33,11 @@
 	</target>
 	
 	<target name="prepare" depends="release-clone">
+		<!-- branch defaults to master if not specified -->
+		<property name="branch" value="master" override="true" />
+		<exec command="php prepare.php ${targetDir} ${version} ${branch}" passthru="true" checkreturn="true" />
 	</target>
-		
+	
+	<target name="release" depends="release-clone" />
 
 </project>
