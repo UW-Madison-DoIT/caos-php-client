@@ -6,7 +6,12 @@
 	
 	<!-- deletes the target directory if it exists -->
 	<target name="clean">
-		<exec dir="${targetDir}" command="attrib -R /S *.*"/>
+		<if>
+			<os family="windows" />
+			<then>
+				<exec dir="${targetDir}" command="attrib -R /S *.*" />
+			</then>
+		</if>
 		<delete dir="${targetDir}" failonerror="false" />
 	</target>
 	
