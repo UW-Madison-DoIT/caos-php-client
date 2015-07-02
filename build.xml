@@ -3,6 +3,8 @@
 	<!-- Global Build Properties -->
 	<property name="repository.blessed" value="git@bitbucket.org:uwmadison_doit/caos-php-client.git" override="false" />
 	<property name="targetDir" value="target" override="true" />
+
+	<target name="main" />
 	
 	<!-- deletes the target directory if it exists -->
 	<target name="clean">
@@ -16,15 +18,13 @@
 		<delete dir="${targetDir}" failonerror="false" />
 	</target>
 	
-	<target name="main" />
-	
 	<!-- ########### RELEASE TARGETS ############ -->
 	
 	<target name="release-clone" description="clones the blessed repository into a temporary directory" depends="clean">
 		<exec command="php release-clone.php ${repository.blessed} ${targetDir}" passthru="true" checkreturn="true"/>
 	</target>
 	
-	<target name="release" depends="release-clone">
+	<target name="release" description="tags the current commit and pushes it to the blessed repo" depends="release-clone">
 		<!-- branch defaults to master if not specified -->
 		<property name="branch" value="master" override="true" />
 		<exec command="php release.php ${targetDir} ${version} ${branch}" passthru="true" checkreturn="true" />

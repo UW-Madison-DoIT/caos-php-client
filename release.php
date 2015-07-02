@@ -12,7 +12,7 @@ if (count($argv) === 3) {
 	$version = $argv[2];
 	$branch = $argv[3];
 } else {
-	echo "Error: Improper number of arguments passed to prepare.php";
+	echo "Error: Improper number of arguments passed to release.php\n";
 	exit(1);
 }
 
@@ -26,7 +26,7 @@ if ($returnval !== 0) {
 unset($output, $returnval);
 
 if (!chdir($targetDir."/caos-php-client")) {
-	echo "Unable to change directories";
+	echo "Unable to change directories\n";
 	exit(1);
 }
 
@@ -52,7 +52,7 @@ if ($returnval !== 0) {
 unset($output, $returnval);
 
 if (!chdir($home)) {
-	echo "Unable to change directories";
+	echo "Unable to change directories\n";
 	exit(1);
 }
 
