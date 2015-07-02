@@ -1,5 +1,15 @@
 <project name="caos-php-client" default="main">
 
+	<!-- Global Build Properties -->
+	<property name="repository.blessed" value="git@bitbucket.org:uwmadison_doit/caos-php-client.git" override="false" />
+	<property name="targetDir" value="target" override="true" />
+	
+	<!-- deletes the target directory if it exists -->
+	<target name="clean">
+		<exec dir="${targetDir}" command="attrib -R /S *.*"/>
+		<delete dir="${targetDir}" failonerror="false" />
+	</target>
+	
 	<target name="main"/>
 	
 	<target name="composer-update" depends="composer-selfupdate">
@@ -9,5 +19,15 @@
 	<target name="composer-selfupdate">
 		<exec command="php composer.phar self-update" passthru="true" checkreturn="true"/>
 	</target>
+	
+	<!-- ########### RELEASE TARGETS ############ -->
+	
+	<target name="release-clone" description="clones the blessed repository into a temporary directory" depends="clean">
+		<exec command="php release-clone.php ${repository.blessed} ${targetDir}" passthru="true" checkreturn="true"/>
+	</target>
+	
+	<target name="prepare" depends="release-clone">
+	</target>
+		
 
 </project>
