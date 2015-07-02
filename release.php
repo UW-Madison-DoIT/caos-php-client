@@ -51,4 +51,9 @@ if ($returnval !== 0) {
 }
 unset($output, $returnval);
 
+if (!chdir($home)) {
+	echo "Unable to change directories";
+	exit(1);
+}
+
 ?>

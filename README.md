@@ -14,7 +14,7 @@ Once the dependencies are pulled in with composer, generating and updating the C
 This project uses a Fork and Pull collaboration workflow. See http://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows for more info
 
 The primary repository for this project is https://bitucket.org/uwmadison_doit/caos-php-client. Few developers will have write access to this
-repository (not even its creator :rage:), instead the preferred access will be read.
+repository, instead the preferred access will be read.
 
 Each developer should:
 

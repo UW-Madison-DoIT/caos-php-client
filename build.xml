@@ -32,10 +32,10 @@
 		<exec command="php release-clone.php ${repository.blessed} ${targetDir}" passthru="true" checkreturn="true"/>
 	</target>
 	
-	<target name="prepare" depends="release-clone">
+	<target name="release" depends="release-clone">
 		<!-- branch defaults to master if not specified -->
 		<property name="branch" value="master" override="true" />
-		<exec command="php prepare.php ${targetDir} ${version} ${branch}" passthru="true" checkreturn="true" />
+		<exec command="php release.php ${targetDir} ${version} ${branch}" passthru="true" checkreturn="true" />
 	</target>
 
 
