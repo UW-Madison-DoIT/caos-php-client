@@ -18,14 +18,6 @@
 	
 	<target name="main" />
 	
-	<target name="composer-update" depends="composer-selfupdate">
-		<exec command="php composer.phar update" passthru="true" checkreturn="true"/>
-	</target>
-	
-	<target name="composer-selfupdate">
-		<exec command="php composer.phar self-update" passthru="true" checkreturn="true"/>
-	</target>
-	
 	<!-- ########### RELEASE TARGETS ############ -->
 	
 	<target name="release-clone" description="clones the blessed repository into a temporary directory" depends="clean">
