@@ -1,7 +1,13 @@
-<project>
+<project name="caos-php-client" default="main">
 
-	<target name="main">
-		<exec command="echo main" />
+	<target name="main"/>
+	
+	<target name="composer-update" depends="composer-selfupdate">
+		<exec command="php composer.phar update" passthru="true" checkreturn="true"/>
+	</target>
+	
+	<target name="composer-selfupdate">
+		<exec command="php composer.phar self-update" passthru="true" checkreturn="true"/>
 	</target>
 
 </project>

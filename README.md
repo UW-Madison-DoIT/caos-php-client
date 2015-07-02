@@ -41,10 +41,10 @@ php composer.phar install
 
 This will install the wsdl2phpgenerator used to generate the CAOS API classes and will also install phing.
 
-To run the build process execute this command (note it is phing.php not phing.phar)
-
+#### Dependencies
+The dependencies are locked at a known state in composer.lock to ensure stability. In order to manually update them, execute:
 ```bash
-php phing.php <target>
+php phing.php composer-update
 ```
 
 
