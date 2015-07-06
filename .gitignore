@@ -3,3 +3,5 @@
 composer.phar
 /target
 composer.lock
+.idea
+*.iml
