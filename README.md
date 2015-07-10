@@ -8,13 +8,21 @@ CAOS documentation can be found [here](https://wiki.doit.wisc.edu/confluence/dis
 
 ### How to include caos-php-client
 
-If you are using composer to include your dependencies, place this line at the beginning of the file you need the client.
+The version of the CAOS API is included in the version tag of the caos-php-client. For example if you needed version 1.4 of the CAOS API, install the version `1.5.0-v1.4`. Here 1.5.0 specifies the version of the client and v1.4 specifies the version of the CAOS API.
+
+If you are using [composer](https://getcomposer.org/) to include your dependencies, you can use these instructions as guidelines.
+
+Include `uwmadison_doit/caos-php-client` in your `composer.json` file under the section dependencies. Refer to the [composer.json guide](https://getcomposer.org/doc/04-schema.md) if you need help.
+
+Composer will create a directory `/vendor` wherever you have placed your `composer.json` file. Under this directory you can find the source code for the client and also the `autoload.php` file.
+
+Place this line at the beginning of the file you need the client and you are ready to use the client!
 
 ```
 require 'path/to/vendor/autoload.php';
 ```
 
-### How to issue requests with client
+### How to issue requests with the client
 
 All requests and responses are handled by the class ChubService which extends php's [SoapClient](http://php.net/manual/en/class.soapclient.php). To use SoapClient you must either configure php with the option `--enable-soap` or include `extension=php_soap.dll` in your `php.ini` file.
 
