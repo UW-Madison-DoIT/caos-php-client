@@ -4,11 +4,13 @@
 
 CAOS stands for the [Curricular and Academic Operational Data Store](https://wiki.doit.wisc.edu/confluence/pages/viewpage.action?pageId=47562009). It is used to connect with the PeopleSoft database in order to retrieve various curricular and academic data concerning UW-Madison. Credentials for using CAOS are given on a service by service basis. If you wish to use this client, you must first request credentials on the site found above for your particular project.
 
-CAOS documentation can be found [here](https://wiki.doit.wisc.edu/confluence/display/CHUB/CAOS+Documentation). The particular classes that are used to communicate with CAOS are found under Reference Documentation. Be aware that the docs found here are for the most recent version of CAOS. If you need to reference earlier docs go [here](https://wiki.doit.wisc.edu/confluence/pages/viewpage.action?pageId=47562009) and click on the tab Previous Versions.
+CAOS documentation can be found [here](https://wiki.doit.wisc.edu/confluence/display/CHUB/CAOS+Documentation). The particular classes that are used to communicate with CAOS are found under Reference Documentation. For version 1.5 of the SOAP Schema see [here](https://wams.doit.wisc.edu/chub/chub-soap-schema-1.5/apidocs/index.html).
+
+Be aware that the docs found here are for the most recent version of CAOS. If you need to reference earlier docs go [here](https://wiki.doit.wisc.edu/confluence/pages/viewpage.action?pageId=47562009) and click on the tab Previous Versions.
 
 ### How to include caos-php-client
 
-The version of the CAOS API is included in the version tag of the caos-php-client. For example if you needed version 1.4 of the CAOS API, install the version `1.5.0-v1.4`. Here 1.5.0 specifies the version of the client and v1.4 specifies the version of the CAOS API.
+The version of the client is tied to the version of the CAOS API. Specifically, the major and minor version numbers align with the CAOS API. For example, version `1.5.x` corresponds to the client that uses version 1.5 of the CAOS API whereas version `1.3.x` corresponds to the client that uses version 1.3 of the CAOS API.
 
 If you are using [composer](https://getcomposer.org/) to include your dependencies, you can use these instructions as guidelines.
 
@@ -16,7 +18,7 @@ Include `uwmadison_doit/caos-php-client` in your `composer.json` file under the 
 
 Composer will create a directory `/vendor` wherever you have placed your `composer.json` file. Under this directory you can find the source code for the client and also the `autoload.php` file.
 
-Place this line at the beginning of the file you need the client and you are ready to use the client!
+Place this line at the beginning of the file and you are ready to use the client!
 
 ```
 require 'path/to/vendor/autoload.php';
