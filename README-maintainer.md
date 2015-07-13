@@ -36,7 +36,7 @@ php composer.phar install
 This will install the wsdl2phpgenerator used to generate the CAOS API classes and will also install phing.
 
 ### Generating or Updating CAOS API classes 
-Once the dependencies are pulled in with composer, generating and updating the CAOS API classes can be done with this command. The CAOS API version should by specified as 1.5, 1.4, 1.3, 1.2, 1.1, or 1.0, depending on which version is desired.
+Once the dependencies are pulled in with composer, generating and updating the CAOS API classes can be done with this command. The CAOS API version should by specified as 1.5, 1.4, 1.3, 1.2, 1.1, or 1.0, depending on which version is desired. Do *not* prefix with v as in `v1.5`
 
 ``` php
 	php classGenerator.php ${caosAPIversion}
