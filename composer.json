@@ -1,8 +1,8 @@
 {
 	"name": "uwmadison_doit/caos-php-client",
 	"description": "A PHP client used to connect with the CAOS API and perform requests",
-	"homepage": "https://bitbucket.org/uwmadison_doit/caos-php-client",
   	"license": "Apache-2.0",
+	"homepage": "https://wiki.doit.wisc.edu/confluence/pages/viewpage.action?pageId=47562009",
 	"authors": [
 		{
 			"name": "UW-Madison DoIT ADI Internal Applications",
@@ -12,7 +12,7 @@
 	],
 	"support": {
 		"email": "adi-ia@lists.wisc.edu",
-		"source": "https://bitbucket.org/uwmadison_doit/caos-php-client"
+		"source": "https://github.com/cknuth/caos-php-client"
 	},
 
 	"require": {
