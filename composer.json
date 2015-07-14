@@ -29,7 +29,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"CAOSWebService\\": "src/main"
+			"edu\\wisc\\service\\caos\\": "src/main"
 		}
 	}
 }
