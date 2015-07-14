@@ -22,7 +22,8 @@ $generator = new \Wsdl2PhpGenerator\Generator();
 $generator->generate(
 	new \Wsdl2PhpGenerator\Config(array(
 			'inputFile' => 'http://esb.services.wisc.edu/esbv2/CHUB/WebService/chub-ws-'.$caosVersion.'/chub.wsdl',
-			'outputDir' => 'src/main/'
+			'outputDir' => 'src/main/',
+			'namespaceName' => 'CAOSWebService'
 	))	
 );
 

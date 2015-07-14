@@ -26,6 +26,11 @@
 	  	"branch-alias": {
 		  	"dev-master": "1.5.x-dev"
 		}
+	},
+	"autoload": {
+		"psr-4": {
+			"CAOSWebService\\": "src/main"
+		}
 	}
 }
 	
