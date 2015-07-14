@@ -42,19 +42,19 @@ Here is some example code for version 1.5 of the CAOS API.
 $ChubService = new \ChubService();
 $request = new \GetPresentTermRequest($courseCareerCode);
 $reponse = $ChubService->GetPresentTerm($request);
-// Extract data from response
+// Code here to extract data from response
 unlink($request, $response);
 
 // Code to request a class (ChubService is already initialized so it need not be declared again)
 $request = new \GetClassRequest($classID);
 $response = $ChubService->GetClass($request);
-// Extract data from response
+// Code here to extract data from response
 unlink($request, $response);
 
 // Code to request a list of advisors
 $request = new \GetAdvisorsRequest($personQuery, $advisingDataOptions, $attributes);
 $reponse = $ChubService->GetAdvisors($request);
-// Extract data from response
+// Code here to extract data from response
 unlink($request, $response);
 ```
 
