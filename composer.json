@@ -19,7 +19,8 @@
 	},
 	"require-dev": {
 		"phing/phing": "2.11.0",
-		"wsdl2phpgenerator/wsdl2phpgenerator": "3.2.0"
+		"wsdl2phpgenerator/wsdl2phpgenerator": "3.2.0",
+		"phpdocumentor/phpdocumentor": "2.*"
 	},
   	"extra": {
 	  	"branch-alias": {
