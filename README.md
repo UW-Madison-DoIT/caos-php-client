@@ -12,6 +12,8 @@ For more documentation see the section Documentation below.
 
 The version of the client is tied to the version of the CAOS API. Specifically, the major and minor version numbers align with the CAOS API. For example, version `1.5.x` corresponds to the client that uses version 1.5 of the CAOS API whereas version `1.3.x` corresponds to the client that uses version 1.3 of the CAOS API.
 
+#### Installing with composer
+
 If you are using [composer](https://getcomposer.org/) to include your dependencies, you can use these instructions as guidelines.
 
 Include `uwmadison_doit/caos-php-client` in your `composer.json` file under the section dependencies. Refer to the [composer.json guide](https://getcomposer.org/doc/04-schema.md) if you need help.
@@ -22,6 +24,14 @@ Place this line at the beginning of the file and you are ready to use the client
 
 ```
 require 'path/to/vendor/autoload.php';
+```
+
+#### Installing manually
+
+If you choose to install the source code directly into your project, you need only to require the `autoload.php` file under `/caos-php-client/src/main`. This can be done with this line of code placed at the beginning of your file.
+
+```php
+require 'path/to/caos-php-client/src/main/autoload.php';
 ```
 
 ### How to issue requests with the client
@@ -39,20 +49,20 @@ Here is some example code for version 1.5 of the CAOS API.
 
 ``` php
 // Code to request the present term
-$ChubService = new \ChubService();
-$request = new \GetPresentTermRequest($courseCareerCode);
+$ChubService = new CAOSWebService\ChubService();
+$request = new CAOSWebService\GetPresentTermRequest($courseCareerCode);
 $reponse = $ChubService->GetPresentTerm($request);
 // Code here to extract data from response
 unlink($request, $response);
 
 // Code to request a class (ChubService is already initialized so it need not be declared again)
-$request = new \GetClassRequest($classID);
+$request = new CAOSWebService\GetClassRequest($classID);
 $response = $ChubService->GetClass($request);
 // Code here to extract data from response
 unlink($request, $response);
 
 // Code to request a list of advisors
-$request = new \GetAdvisorsRequest($personQuery, $advisingDataOptions, $attributes);
+$request = new CAOSWebService\GetAdvisorsRequest($personQuery, $advisingDataOptions, $attributes);
 $reponse = $ChubService->GetAdvisors($request);
 // Code here to extract data from response
 unlink($request, $response);
