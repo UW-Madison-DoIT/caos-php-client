@@ -28,7 +28,13 @@ require 'path/to/vendor/autoload.php';
 
 #### Installing manually
 
-If you choose to install the source code directly into your project, you need only to require the `autoload.php` file under `/caos-php-client/src/main`. This can be done with this line of code placed at the beginning of your file.
+You can install the code directly from [GitHub](https://github.com/UW-Madison-DoIT/caos-php-client) into your project by using the command
+
+```bash
+git clone https://github.com/UW-Madison-DoIT/caos-php-client --branch <tag_name> --single-branch
+```
+
+Once the source code is installed, you need only to require the `autoload.php` file under `/caos-php-client/src/main`. This can be done with this line of code placed at the beginning of your file.
 
 ```php
 require 'path/to/caos-php-client/src/main/autoload.php';
