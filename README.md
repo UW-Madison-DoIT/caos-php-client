@@ -55,20 +55,20 @@ Here is some example code for version 1.5 of the CAOS API.
 
 ``` php
 // Code to request the present term
-$ChubService = new CAOSWebService\ChubService();
-$request = new CAOSWebService\GetPresentTermRequest($courseCareerCode);
+$ChubService = new edu\wisc\service\caos\ChubService();
+$request = new edu\wisc\service\caos\GetPresentTermRequest($courseCareerCode);
 $reponse = $ChubService->GetPresentTerm($request);
 // Code here to extract data from response
 unlink($request, $response);
 
 // Code to request a class (ChubService is already initialized so it need not be declared again)
-$request = new CAOSWebService\GetClassRequest($classID);
+$request = new edu\wisc\service\caos\GetClassRequest($classID);
 $response = $ChubService->GetClass($request);
 // Code here to extract data from response
 unlink($request, $response);
 
 // Code to request a list of advisors
-$request = new CAOSWebService\GetAdvisorsRequest($personQuery, $advisingDataOptions, $attributes);
+$request = new edu\wisc\service\caos\GetAdvisorsRequest($personQuery, $advisingDataOptions, $attributes);
 $reponse = $ChubService->GetAdvisors($request);
 // Code here to extract data from response
 unlink($request, $response);
