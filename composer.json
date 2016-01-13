@@ -12,7 +12,7 @@
 	],
 	"support": {
 		"email": "adi-ia@lists.wisc.edu",
-		"source": "https://github.com/cknuth/caos-php-client"
+		"source": "https://github.com/UW-Madison-DoIT/caos-php-client"
 	},
 
 	"require": {
