@@ -1,7 +1,5 @@
 <?php
 
-use edu\wisc\services\caos\ChubService;
-
 /**
  * Integration tests for {@link ChubService}
  * 
@@ -47,13 +45,11 @@ class ChubServiceIntegrationTest extends PHPUnit_Framework_TestCase
 	 * Call getPresentTerm, confirm successful response.
 	 */
 	public function testGetPresentTerm() {
-		$service = new edu\wisc\services\caos\ChubService(
-				array('login'          => static::getConfigurationValue('caos.username'),
-                      'password'       => static::getConfigurationValue('caos.password'))
-				);
+		$service = edu\wisc\services\caos\ChubServiceFactory::getInstance(static::getConfigurationValue('caos.username'), static::getConfigurationValue('caos.password'));
+		
 		$request = new edu\wisc\services\caos\GetPresentTermRequest(null);
 		$response = $service->GetPresentTerm($request);
-		var_dump($response);
-		$this->assertTrue(false);
+		$this->assertInstanceOf('edu\wisc\services\caos\GetPresentTermResponse', $response);
+		$this->assertTrue(strlen($response->getTerm()->getTermCode()) === 4);
 	}
 }
