@@ -48,7 +48,7 @@
 	
 	<!-- runs phpunit 'integration'tests -->
 	<target name="phpunit-integration" depends="get-phpunit">
-		<exec command="php phpunit.phar -c src/test/phpunit-integration.xml" passthru="true" dir="."
+		<exec command="php phpunit.phar -c phpunit-integration.xml" passthru="true" dir="."
 		checkreturn="true" />
 	</target>
 

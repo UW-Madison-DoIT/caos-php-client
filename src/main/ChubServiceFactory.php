@@ -17,7 +17,7 @@ class ChubServiceFactory {
 	 * @param string $username ESB service account username
 	 * @param string $password ESB service account password
 	 * @param string $wsdl
-	 * @return a new instance of \edu\wisc\services\caos\ChubService
+	 * @return edu\wisc\services\caos\ChubService
 	 */
 	public static function getInstance($username, $password, $wsdl = null) {
 		$service = null;
