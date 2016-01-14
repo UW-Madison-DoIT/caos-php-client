@@ -1,7 +1,7 @@
 <project name="caos-php-client" default="main">
 
 	<!-- Global Build Properties -->
-	<property name="repository.blessed" value="git@bitbucket.org:uwmadison_doit/caos-php-client.git" override="false" />
+	<property name="repository.blessed" value="git@github.com:UW-Madison-DoIT/caos-php-client.git" override="false" />
 	<property name="targetDir" value="target" override="true" />
 
 	<target name="main" />
