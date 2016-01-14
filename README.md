@@ -98,3 +98,7 @@ You can refer to the request and response classes [here](https://wams.doit.wisc.
 Once you have retrieved your response using the ChubService methods, you only need to extract the data. The curricular and academic objects (like term, class, advisors, etc.) can be referred to [here for curricular](https://wams.doit.wisc.edu/chub/curricular-data-model-1.5/apidocs/) and [here for academic](https://wams.doit.wisc.edu/chub/academic-data-model-0.1/apidocs/index.html) in the JavaDocs and *links to phpdocs here*. Remember, usage will always follow the PHPDocs!
 
 Links to php docs coming soon!
+
+### Contributing
+
+See [CONTRIBUTING](CONTRIBUTING.md) if you'd like to contribute to development of this project.
