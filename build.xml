@@ -30,5 +30,26 @@
 		<exec command="php release.php ${targetDir} ${version} ${branch}" passthru="true" checkreturn="true" />
 	</target>
 
+	<!-- Downloads phpunit.phar -->
+	<target name="get-phpunit">
+		<if>
+			<not>
+				<available file="phpunit.phar" />
+			</not>
+			<then>
+				<echo msg="phpunit.phar not found. Downloading..." />
+				<httpget url="https://phar.phpunit.de/phpunit.phar" sslVerifyPeer="false" dir="."/>
+			</then>
+			<else>
+				<echo msg="phpunit.phar already exists" />
+			</else>
+		</if>
+	</target>
+	
+	<!-- runs phpunit 'integration'tests -->
+	<target name="phpunit-integration" depends="get-phpunit">
+		<exec command="php phpunit.phar -c phpunit-integration.xml" passthru="true" dir="."
+		checkreturn="true" />
+	</target>
 
 </project>

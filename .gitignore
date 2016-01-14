@@ -1,7 +1,11 @@
-/vendor
-.project
-composer.phar
-/target
-composer.lock
 .idea
+.project
+
+composer.lock
+it-configuration.ini
+
+/target
+/vendor
+
 *.iml
+*.phar

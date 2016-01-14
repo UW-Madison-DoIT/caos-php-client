@@ -54,21 +54,23 @@ Issuing requests with the CAOS API follows this framework.
 Here is some example code for version 1.5 of the CAOS API.
 
 ``` php
-// Code to request the present term
-$ChubService = new edu\wisc\service\caos\ChubService();
-$request = new edu\wisc\service\caos\GetPresentTermRequest($courseCareerCode);
+// acquire an instance from ChubServiceFactory
+$ChubService = edu\wisc\services\caos\ChubServiceFactory::getInstance('myusername', 'mypassword');
+
+// Request the present term
+$request = new edu\wisc\services\caos\GetPresentTermRequest($courseCareerCode);
 $reponse = $ChubService->GetPresentTerm($request);
 // Code here to extract data from response
 unlink($request, $response);
 
-// Code to request a class (ChubService is already initialized so it need not be declared again)
-$request = new edu\wisc\service\caos\GetClassRequest($classID);
+// Request a class (ChubService is already initialized so it need not be declared again)
+$request = new edu\wisc\services\caos\GetClassRequest($classID);
 $response = $ChubService->GetClass($request);
 // Code here to extract data from response
 unlink($request, $response);
 
-// Code to request a list of advisors
-$request = new edu\wisc\service\caos\GetAdvisorsRequest($personQuery, $advisingDataOptions, $attributes);
+// Request a list of advisors
+$request = new edu\wisc\services\caos\GetAdvisorsRequest($personQuery, $advisingDataOptions, $attributes);
 $reponse = $ChubService->GetAdvisors($request);
 // Code here to extract data from response
 unlink($request, $response);
